@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="calculator-grid" id="calculator" name = 'calculator'>
+        <div class="output" id="output" name = >
+            <p></p>
+        </div>
+        <button class="span-two" id="clear">AC</button>
+        <button id="delete">DEL</button>
+        
+        <button class="button">/</button>
+
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+
+        <button class="button">*</button>
+
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+
+        <button class="button">+</button>
+
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+
+        <button class="button">-</button>
+        <button class="button">.</button>
+        <button class="button">0</button>
+        <button class="span-two" id="equal">=</button>
+        <!-- <input type="button" class="button" value="1">
+        <input type="button" class="button" value="2" >
+        <input type="button" class="button" value="3" >
+        <input type="button" class="button" value="*" >
+        <input type="button" class="button" value="4" >
+        <input type="button" class="button" value="5" >
+        <input type="button" class="button" value="6" >
+        <input type="button" class="button" value="+" >
+        <input type="button" class="button" value="7" >
+        <input type="button" class="button" value="8" >
+        <input type="button" class="button" value="9" >
+        <input type="button" class="button" value="-" >
+        <input type="button" class="button" value="." >
+        <input type="button" class="button" value="0" >
+        <input class="span-two" type="button" class="button" value="1" > -->
+    </div>
+</body>
+<script>
+    document.getElementById('calculator').addEventListener('click',function(e){
+        
+        let calculation = document.getElementById('output');
+        
+        if(e.target.innerText!="=" && e.target.innerText!="AC" && e.target.innerText!="DE"){
+            calculation.innerText += e.target.innerText;
+        }
+       
+    })
+    document.getElementById('equal').addEventListener('click',function(){
+       let result = document.getElementById('output');
+       result.innerText = eval(result.innerText)
+    })
+    document.getElementById('clear').addEventListener('click',function(){
+        document.getElementById('output').innerText = ''
+    })  
+    document.getElementById('delete').addEventListener('click',function(){
+        let del = document.getElementById('output');
+        del.innerText = del.innerText.slice(0,-1);
+    })
+
+</script>
+</html>
